@@ -6,7 +6,7 @@
     "author_img": "https://i.pravatar.cc/150?img=1",
     "author": "Imran Parvez",
     "posted_date": "2025-01-01",
-    "reading_time": "5 min read",
+    "reading_time": 5 ,
     "hashtags": ["beginners", "es6"]
   },
   {
@@ -16,7 +16,7 @@
     "author_img": "https://i.pravatar.cc/150?img=2",
     "author": "John Doe",
     "posted_date": "2025-01-03",
-    "reading_time": "7 min read",
+    "reading_time": 7,
     "hashtags": ["react", "hooks"]
   },
   {
@@ -26,7 +26,7 @@
     "author_img": "https://i.pravatar.cc/150?img=3",
     "author": "Sarah Khan",
     "posted_date": "2025-01-05",
-    "reading_time": "6 min read",
+    "reading_time": 7,
     "hashtags": ["nextjs", "frontend"]
   },
   {
@@ -36,7 +36,7 @@
     "author_img": "https://i.pravatar.cc/150?img=4",
     "author": "Alex Smith",
     "posted_date": "2025-01-07",
-    "reading_time": "4 min read",
+    "reading_time": 4,
     "hashtags": ["tailwind", "css"]
   },
   {
@@ -46,7 +46,7 @@
     "author_img": "https://i.pravatar.cc/150?img=5",
     "author": "Rahim Uddin",
     "posted_date": "2025-01-10",
-    "reading_time": "8 min read",
+    "reading_time": 8,
     "hashtags": ["javascript", "tips"]
   }
 ]

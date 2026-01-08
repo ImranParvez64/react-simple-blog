@@ -1,33 +1,72 @@
 import React from "react";
 import { FaBookmark } from "react-icons/fa";
 
-const Blog = ({ blog }) => {
-  const { title, cover, author, posted_date, author_img, hashtags } = blog;
+const Blog = ({ blog, handleBookmarked, handleMarkAsRead }) => {
+  const {
+    title,
+    cover,
+    author,
+    posted_date,
+    author_img,
+    hashtags,
+    reading_time,
+    id,
+  } = blog;
+
   return (
-    <div className="card bg-base-100 w-96 shadow-sm">
-      <figure>
+    <div className="w-full max-w-sm mx-auto bg-white rounded-2xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300">
+      <div className="relative">
         <img
           src={cover}
-          alt="Shoes"
+          alt={title}
+          className="w-full h-48 object-cover"
         />
-      </figure>
-      <div className="card-body">
-        <h2 className="card-title">{title}</h2>
-        <div className="flex items-center justify-center gap-3">
-          <div>
-            <img src={author_img} alt="" className="w-14 rounded-full" />
+        <button
+          onClick={() => handleBookmarked(blog)}
+          className="absolute top-3 right-3 bg-white/90 p-2 rounded-full hover:bg-purple-100 transition"
+        >
+          <FaBookmark className="text-xl text-purple-600" />
+        </button>
+      </div>
+
+      <div className="p-5 flex flex-col gap-4">
+        <h2 className="text-lg md:text-xl font-semibold text-gray-800 leading-snug">
+          {title}
+        </h2>
+
+        <div className="flex items-center gap-3">
+          <img
+            src={author_img}
+            alt={author}
+            className="w-12 h-12 rounded-full object-cover"
+          />
+          <div className="flex flex-col">
+            <span className="font-medium text-gray-700">{author}</span>
+            <span className="text-sm text-gray-500">{posted_date}</span>
           </div>
-          <p className="text-xl">Author: {author}</p>
-          <FaBookmark className="text-2xl hover:text-blue-400 cursor-pointer text-purple-500" />
         </div>
-        <p className="text-xl">Publish Date: {posted_date}</p>
-        <p className="text-xl">Author: {author}</p>
-        <div className="flex gap-2 w-[40%]">
-          <p className="px-2 bg-amber-100">#{hashtags[0]}</p>
-          <p className="px-2 bg-amber-100">#{hashtags[1]}</p>
+
+        <div className="flex flex-wrap gap-2">
+          {hashtags.map((tag, index) => (
+            <span
+              key={index}
+              className="text-sm px-3 py-1 rounded-full bg-amber-100 text-amber-700"
+            >
+              #{tag}
+            </span>
+          ))}
         </div>
-        <div className="flex justify-end">
-            <button className="btn btn-primary hover:scale-105 transition-all ">Mark as Read</button>
+
+        <div className="flex items-center justify-between mt-2">
+          <span className="text-sm text-gray-500">
+            {reading_time} min read
+          </span>
+          <button
+            onClick={() => handleMarkAsRead(reading_time, id)}
+            className="px-4 py-2 text-sm font-medium text-white bg-purple-600 rounded-lg hover:bg-purple-700 hover:scale-105 transition"
+          >
+            Mark as Read
+          </button>
         </div>
       </div>
     </div>
