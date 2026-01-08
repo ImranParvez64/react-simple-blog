@@ -6,7 +6,7 @@ const Navbar = () => {
       <div className="container mx-auto px-4">
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center gap-3">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-purple-600 to-indigo-500 flex items-center justify-center shadow-md">
+            <div className="w-10 h-10 rounded-xl bg-linear-to-br from-purple-600 to-indigo-500 flex items-center justify-center shadow-md">
               <span className="text-white font-bold text-lg">WB</span>
             </div>
             <h1 className="text-xl md:text-2xl font-bold text-gray-800">
